@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SRgpHLMhBUoTb7xVMfQVYH1eaBD/Xb04uwfdwJ5zN+gRfKGBiC/+vEhjfJYvUV6i+VVNWRC94BwnF/kLq7dLaA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ivans\\source\\repos\\LifeSpotNew\\LifeSpot\\LifeSpot.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ivans\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}
