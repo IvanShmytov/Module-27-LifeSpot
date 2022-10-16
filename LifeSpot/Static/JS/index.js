@@ -1,34 +1,45 @@
-﻿let session = new Map();
-
-setTimeout(function () {
+﻿setTimeout(function () {
     alert("Нравится LifeSpot? " + '\n' + "Подпишитесь на наш Instagram @lifespot999!");
 }, 60000);
 
-const inputParseFunction = function () {
-    return document.getElementsByTagName('input')[0].value.toLowerCase();
-}
-function handleSession() {
-    session.set("startDate", new Date().toLocaleString())
-    session.set("userAgent", window.navigator.userAgent)
-}
-function checkAge(){
-    session.set("age", prompt("Пожалуйста, введите ваш возраст?"))
-    
-    if(session.get("age") >= 18){
-        alert("Приветствуем на LifeSpot! " + '\n' +  "Текущее время: " + new Date().toLocaleString() );
+let checker = function (newVisit) {
+    if (window.sessionStorage.getItem("userAge") >= 18) {
+        if (newVisit) {
+            alert("Приветствуем на LifeSpot! " + '\n' + "Текущее время: " + new Date().toLocaleString());
+        }
     }
-    else{
+    else {
         alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
         window.location.href = "http://www.google.com"
     }
 }
 
-let sessionLog = function logSession()
-{
-    for (let item of session)
-    {
-        console.log(item)
+let logger = function () {
+    console.log('Начало сессии: ' + window.sessionStorage.getItem("startDate"))
+    console.log('Даныне клиента: ' + window.sessionStorage.getItem("userAgent"))
+    console.log('Возраст пользователя: ' + window.sessionStorage.getItem("userAge"))
+}
+function handleSession(logger, checker){
+
+    if (window.sessionStorage.getItem("startDate") == null) {
+        window.sessionStorage.setItem("startDate", new Date().toLocaleString())
     }
+
+    if (window.sessionStorage.getItem("userAgent") == null) {
+        window.sessionStorage.setItem("userAgent", window.navigator.userAgent)
+    }
+
+    if (window.sessionStorage.getItem("userAge") == null) {
+        let input = prompt("Пожалуйста, введите ваш возраст?");
+        window.sessionStorage.setItem("userAge", input)
+
+        checker(true)
+    } else {
+
+        checker(false)
+    }
+
+    logger()
 }
 
 function filterContent() {

@@ -5,7 +5,9 @@
     <title>LifeSpot</title>
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <script src= "../Static/JS/index.js"></script>
-    <script>checkAge(); handleSession(); sessionLog();</script>
+    <script>handleSession(logger, checker); const inputParseFunction = function () {
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }</script>
 </head>
 <body>
     <header id="header-color">
@@ -14,6 +16,7 @@
         <input type="text" oninput="filterContent();" size="50%">
     </header>
     <!--SIDEBAR-->
+    <div class="bordered">
     <div class="video-container">
         <iframe width="410" height="265" src="https://www.youtube.com/embed/srlpC5tmhYs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h3 class="video-title">Нью-Йорк, Брайант Парк</h3>
@@ -25,6 +28,7 @@
     <div class="video-container">
         <iframe width="410" height="265" src="https://www.youtube.com/embed/JplMzss6_YE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <h3 class="video-title">Лондон, автобусный маршрут</h3>
+    </div>
     </div>
     <!--FOOTER-->
 </body>
